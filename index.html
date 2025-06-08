@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPLyfter | Coming Soon</title>
+  <style>
+    :root {
+      --purple: #6A1B9A;
+      --white: #ffffff;
+      --gray: #f2f2f2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--white);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--purple);
+      color: var(--white);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header img {
+      max-height: 60px;
+    }
+
+    section.hero {
+      background-color: var(--gray);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section.hero h1 {
+      font-size: 2.5rem;
+      color: var(--purple);
+    }
+
+    section.hero p {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      background-color: var(--purple);
+      color: var(--white);
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .form-section {
+      padding: 40px 20px;
+      background-color: var(--white);
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: var(--purple);
+      color: var(--white);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      section.hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-placeholder.png" alt="UPLyfter Logo" />
+  </header>
+
+  <section class="hero">
+    <h1>Bridging the Gaps Between Resources and Need</h1>
+    <p>Be the first to connect, give, or receive support with the UPLyfter app.</p>
+    <button class="btn" onclick="document.getElementById('earlyAccess').scrollIntoView({behavior: 'smooth'})">Get Early Access</button>
+  </section>
+
+  <section class="form-section" id="earlyAccess">
+    <h2>Request Early Access</h2>
+    <form id="accessForm" action="https://formspree.io/f/mayzjwlk" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <select name="role" required>
+        <option value="">Select your role</option>
+        <option value="Nonprofit">Nonprofit</option>
+        <option value="Volunteer">Volunteer</option>
+        <option value="Grant Writer">Grant Writer</option>
+        <option value="Person in Need">Person in Need</option>
+      </select>
+      <textarea name="message" placeholder="Tell us more (organization, location, services, needs, etc.)"></textarea>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Follow us: @uplyfter_ | Email: contact@uplyfter.org</p>
+    <p>© 2025 UPLyfter. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Basic JS for interaction or form enhancement can go here
+  </script>
+</body>
+</html>
