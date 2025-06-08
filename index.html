@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,26 +9,20 @@
     :root {
       --purple: #6A1B9A;
       --white: #ffffff;
-      --gray: #f2f2f2;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --gray: #f9f9f9;
+      --text-gray: #444;
     }
 
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--white);
-      color: #333;
-      line-height: 1.6;
+      background: var(--white);
+      color: var(--text-gray);
     }
 
     header {
       background-color: var(--purple);
-      color: var(--white);
-      padding: 20px 0;
+      padding: 1rem;
       text-align: center;
     }
 
@@ -35,20 +30,21 @@
       max-height: 60px;
     }
 
-    section.hero {
-      background-color: var(--gray);
+    .hero {
+      background: var(--gray);
       padding: 60px 20px;
       text-align: center;
     }
 
-    section.hero h1 {
-      font-size: 2.5rem;
+    .hero h1 {
+      font-size: 2.8rem;
       color: var(--purple);
     }
 
-    section.hero p {
-      margin: 20px 0;
+    .hero p {
+      margin: 20px auto;
       font-size: 1.2rem;
+      max-width: 600px;
     }
 
     .btn {
@@ -56,14 +52,67 @@
       color: var(--white);
       padding: 12px 24px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
     }
 
+    .icons {
+      padding: 50px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .icon-box {
+      width: 220px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      background-color: #fff;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon-box img {
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .split-section {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 50px 20px;
+      background-color: var(--gray);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .split-text, .split-stats {
+      flex: 1;
+      padding: 20px;
+      min-width: 280px;
+      max-width: 600px;
+    }
+
+    .split-stats h2 {
+      font-size: 3rem;
+      color: var(--purple);
+      margin: 0;
+    }
+
     .form-section {
-      padding: 40px 20px;
-      background-color: var(--white);
+      padding: 50px 20px;
       text-align: center;
     }
 
@@ -77,9 +126,9 @@
 
     input, select, textarea {
       padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
       font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
     }
 
     footer {
@@ -90,16 +139,20 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      section.hero h1 {
-        font-size: 1.8rem;
+    .hidden {
+      display: none;
+    }
+
+    @media(max-width: 768px) {
+      .split-section {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo-placeholder.png" alt="UPLyfter Logo" />
+    <h1 style="color:white;">UPLyfter</h1>
   </header>
 
   <section class="hero">
@@ -108,30 +161,119 @@
     <button class="btn" onclick="document.getElementById('earlyAccess').scrollIntoView({behavior: 'smooth'})">Get Early Access</button>
   </section>
 
+  <section class="icons">
+    <h2>Coming Soon To Help:</h2>
+    <div class="icon-grid">
+      <div class="icon-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/3928/3928595.png" alt="Volunteer Icon" />
+        <h3>Volunteers</h3>
+        <p>Connect with nonprofits that need your unique skills and energy.</p>
+      </div>
+      <div class="icon-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Nonprofit Icon" />
+        <h3>Nonprofits</h3>
+        <p>Access tools, visibility, and support to further your mission.</p>
+      </div>
+      <div class="icon-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Heart Icon" />
+        <h3>People in Need</h3>
+        <p>Find local aid, services, and uplifting support that fits your needs.</p>
+      </div>
+      <div class="icon-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/2541/2541988.png" alt="Grant Writer Icon" />
+        <h3>Grant Writers</h3>
+        <p>Work with nonprofits and expand your impact through funding help.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="split-text">
+      <h2>Why UPLyfter?</h2>
+      <p>UPLyfter is more than a directory. It's a centralized, interactive space to connect those giving help with those needing it most. Our goal is to scale nationwide, creating a modern support network for underserved communities, powered by tech and compassion.</p>
+    </div>
+    <div class="split-stats">
+      <h2>38M+</h2>
+      <p>Americans live in poverty — and many still don't know where to turn. We're building the bridge.</p>
+    </div>
+  </section>
+
   <section class="form-section" id="earlyAccess">
     <h2>Request Early Access</h2>
-    <form id="accessForm" action="https://formspree.io/f/mayzjwlk" method="POST">
+    <form action="https://formspree.io/f/mayzjwlk" method="POST">
       <input type="text" name="name" placeholder="Full Name" required />
       <input type="email" name="email" placeholder="Email Address" required />
-      <select name="role" required>
+      <select name="role" id="role" required onchange="updateFields()">
         <option value="">Select your role</option>
         <option value="Nonprofit">Nonprofit</option>
         <option value="Volunteer">Volunteer</option>
         <option value="Grant Writer">Grant Writer</option>
         <option value="Person in Need">Person in Need</option>
       </select>
-      <textarea name="message" placeholder="Tell us more (organization, location, services, needs, etc.)"></textarea>
+
+      <div id="nonprofitFields" class="hidden">
+        <input type="text" name="organization" placeholder="Organization Name" />
+        <input type="text" name="city" placeholder="City" />
+        <input type="text" name="zip" placeholder="Zip Code" />
+        <textarea name="services" placeholder="Services Provided"></textarea>
+      </div>
+
+      <div id="volunteerFields" class="hidden">
+        <input type="text" name="city_vol" placeholder="City" />
+        <input type="text" name="zip_vol" placeholder="Zip Code" />
+        <textarea name="skills" placeholder="Skills / Interests"></textarea>
+      </div>
+
+      <div id="grantWriterFields" class="hidden">
+        <select name="experience">
+          <option value="">Select Experience Level</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Expert">Expert</option>
+        </select>
+      </div>
+
+      <div id="needFields" class="hidden">
+        <input type="text" name="zip_need" placeholder="Zip Code" />
+        <label><input type="checkbox" name="needs[]" value="Food" /> Food</label>
+        <label><input type="checkbox" name="needs[]" value="Housing" /> Housing</label>
+        <label><input type="checkbox" name="needs[]" value="Health" /> Health</label>
+        <label><input type="checkbox" name="needs[]" value="Employment" /> Employment</label>
+        <label><input type="checkbox" name="needs[]" value="Other" /> Other</label>
+      </div>
+
       <button class="btn" type="submit">Submit</button>
     </form>
   </section>
 
   <footer>
     <p>Follow us: @uplyfter_ | Email: contact@uplyfter.org</p>
-    <p>© 2025 UPLyfter. All Rights Reserved.</p>
+    
+<p style="font-size: 0.8rem; margin-top: 10px;">
+  We value your privacy. Your information will only be used for UPLyfter early access communication and will never be shared or sold.
+</p>
+
+<p>© 2025 UPLyfter. All Rights Reserved.</p>
   </footer>
 
   <script>
-    // Basic JS for interaction or form enhancement can go here
+    function updateFields() {
+      document.getElementById('nonprofitFields').classList.add('hidden');
+      document.getElementById('volunteerFields').classList.add('hidden');
+      document.getElementById('grantWriterFields').classList.add('hidden');
+      document.getElementById('needFields').classList.add('hidden');
+
+      const role = document.getElementById('role').value;
+      if (role === 'Nonprofit') {
+        document.getElementById('nonprofitFields').classList.remove('hidden');
+      } else if (role === 'Volunteer') {
+        document.getElementById('volunteerFields').classList.remove('hidden');
+      } else if (role === 'Grant Writer') {
+        document.getElementById('grantWriterFields').classList.remove('hidden');
+      } else if (role === 'Person in Need') {
+        document.getElementById('needFields').classList.remove('hidden');
+      }
+    }
   </script>
 </body>
 </html>
